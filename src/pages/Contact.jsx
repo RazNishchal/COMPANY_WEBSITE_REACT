@@ -64,7 +64,7 @@ function Contact() {
             transition={{ duration: 0.6 }}
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.067341071271!2d85.34586337586509!3d27.715183376178492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb197681bc4d83%3A0x6def78c59798343f!2sCodehit%20Solutions!5e0!3m2!1sen!2snp!4v1709650000000!5m2!1sen!2snp"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.0559828594137!2d85.34084337611395!3d27.71555772512799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb197581bc4dc3%3A0x6def78c59758343f!2sCodehit%20Solutions!5e0!3m2!1sen!2snp!4v1770145053927!5m2!1sen!2snp"
               width="100%"
               height="450"
               style={{ border: 0, borderRadius: "var(--radius-lg)" }}
