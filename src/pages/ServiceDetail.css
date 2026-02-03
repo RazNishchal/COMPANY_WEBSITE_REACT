@@ -1,0 +1,160 @@
+:root {
+  /* Fluid Spacing Scale */
+  --space-unit: clamp(2rem, 5vw, 10rem);
+  --section-padding: var(--space-unit) 0;
+}
+
+.service-detail-page {
+  padding-top: clamp(60px, 8vh, 100px);
+  background-color: #ffffff;
+  overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+}
+
+/* 1. Hero Section: High Impact, Centered */
+.detail-hero {
+  background: #05192d;
+  padding: clamp(4rem, 10vw, 8rem) 5%;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+}
+
+.hero-quote {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-family: 'Merriweather', serif;
+  /* Fluid Font: min 1.2rem, scales with width, max 2.2rem */
+  font-size: clamp(1.2rem, 4vw, 2.2rem);
+  font-weight: 300;
+  line-height: 1.4;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 2. Intro Section: Responsive Asymmetry */
+.detail-intro {
+  padding: var(--section-padding);
+  background: white;
+}
+
+.intro-grid {
+  display: grid;
+  /* Adjusts from 1 column to 2 based on space */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
+  gap: clamp(2rem, 8vw, 6rem);
+  align-items: center;
+}
+
+.intro-content h1 {
+  /* Ultra-modern huge text that shrinks perfectly */
+  font-size: clamp(2.2rem, 8vw, 4.5rem);
+  color: #05192d;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: clamp(1rem, 3vw, 2.5rem);
+  letter-spacing: -0.04em;
+}
+
+.intro-content p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.8;
+  color: #5a6473;
+  border-left: 4px solid var(--accent);
+  padding-left: clamp(1rem, 3vw, 2rem);
+}
+
+.intro-image {
+  width: 100%;
+  max-width: 600px; /* Prevents image from getting too huge on 4K */
+  margin: 0 auto;
+}
+
+/* 3. The Tagline: Adaptive Contrast */
+.detail-tagline {
+  padding: clamp(3rem, 7vw, 6rem) 5%;
+  background: linear-gradient(135deg, #05192d 0%, #0a3d62 100%);
+  text-align: center;
+  color: white;
+}
+
+.detail-tagline h2 {
+  font-size: clamp(1.5rem, 5vw, 2.8rem);
+  margin-bottom: 1rem;
+}
+
+/* 4. Service Cards: Auto-Scaling Grid */
+.detail-services {
+  padding: var(--section-padding);
+  background: #f8fafc;
+}
+
+.detail-services .grid {
+  display: grid;
+  /* Magical grid that fits cards perfectly regardless of screen size */
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
+  gap: 2rem;
+}
+
+.service-detail-card {
+  background: white;
+  padding: clamp(1rem, 3vw, 2rem);
+  border-radius: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-detail-image {
+  /* Maintains aspect ratio across sizes */
+  aspect-ratio: 16 / 10;
+  height: auto; 
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+
+/* 5. Approach: Clean Finish */
+.detail-approach {
+  padding: var(--section-padding);
+  text-align: center;
+}
+
+.detail-approach h2 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin-bottom: 1.5rem;
+}
+
+.detail-approach p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #475569;
+}
+
+/* Special Tablet/Mobile Fixes */
+@media (max-width: 1024px) {
+  .intro-content {
+    text-align: center;
+  }
+  .intro-content p {
+    border-left: none;
+    border-top: 4px solid var(--accent);
+    padding: 1.5rem 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra tight spacing for tiny phones */
+  .service-detail-card {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+  .hero-quote {
+    text-align: center;
+    padding: 0 10px;
+  }
+}

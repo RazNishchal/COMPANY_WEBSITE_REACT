@@ -1,0 +1,156 @@
+.service-card {
+  background: white;
+  border-radius: 24px; /* More modern, softer radius */
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative;
+}
+
+/* 1. Enhanced Hover State */
+.service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(5, 25, 45, 0.12);
+  border-color: rgba(255, 107, 53, 0.2); /* Subtle brand color glow */
+}
+
+/* 2. Unified Image Container */
+.service-card-image {
+  position: relative;
+  width: 100%;
+  height: 240px; /* Fixed height for all cards */
+  overflow: hidden;
+  background: #f1f5f9; /* Skeleton background color */
+}
+
+.service-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This fixes the "small/large picture" issue */
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.service-card:hover .service-card-image img {
+  transform: scale(1.1) rotate(1deg); /* Added a tiny rotation for flair */
+}
+
+/* 3. Sleek Overlay */
+.service-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Darker gradient for better icon contrast */
+  background: linear-gradient(to top, rgba(5, 25, 45, 0.7) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+.service-card:hover .service-card-overlay {
+  opacity: 1;
+}
+
+/* 4. Circular Link Icon */
+.service-card-link {
+  width: 54px;
+  height: 54px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 15px rgba(255, 107, 53, 0.3);
+  transform: translateY(20px); /* Slides up on hover */
+}
+
+.service-card:hover .service-card-link {
+  transform: translateY(0);
+}
+
+.service-card-link:hover {
+  background: #ff8c5a;
+  transform: scale(1.1);
+}
+
+/* 5. Content & Description Management */
+.service-card-content {
+  padding: 2.25rem 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card-content h3 {
+  color: #0a3d62;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.service-card-content p {
+  color: #64748b; /* Professional slate-grey */
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+  
+  /* FIXED: Line clamping ensures descriptions are always the same length */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Shows exactly 3 lines then adds "..." */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 6. Animated "Learn More" Button */
+.btn-text {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+  margin-top: auto; /* Pushes to the very bottom */
+  width: fit-content;
+}
+
+.btn-text::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.btn-text:hover {
+  gap: 1rem;
+  letter-spacing: 2px;
+}
+
+.btn-text i {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-text:hover i {
+  transform: translateX(5px);
+}
